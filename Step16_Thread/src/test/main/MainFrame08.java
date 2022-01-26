@@ -24,7 +24,7 @@ public class MainFrame08 extends JFrame implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		JOptionPane.showMessageDialog(this, "알림 입니다.!!!");
+		//JOptionPane.showMessageDialog(this, "알림 입니다.!!!");
 		
 		new Thread(()->{
 			System.out.println("다운로드를 시작 합니다...");

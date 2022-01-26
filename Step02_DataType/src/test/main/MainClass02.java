@@ -7,6 +7,8 @@ public class MainClass02 {
 		//int type 변수 선언과 동시에 값 대입하기
 		int num1=10;
 		//int type 변수 선언만 하고  (지역 변수는 선언만하면 만들어 지지 않는다)
+		String name=null;
+		name="choi";
 		int num2;
 		//값은 나중에 대입하기(값이 대입되는 시점에 변수가 만들어 진다)
 		num2=20;

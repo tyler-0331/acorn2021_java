@@ -13,7 +13,7 @@ public class MainClass05 {
 		try {
 			//스레드(작업단위, Thread) 를 5초 잡아두기 
 			//반드시 try~catch 블럭으로 예외 처리를 해야 한다. 
-			Thread.sleep(5000);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

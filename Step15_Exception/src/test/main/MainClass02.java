@@ -24,7 +24,7 @@ public class MainClass02 {
 			//nfe.printStackTrace();
 			System.out.println("숫자 형식으로 입력 하세요.");
 		}catch(ArithmeticException ae) {
-			//ae.printStackTrace();
+			ae.printStackTrace();
 			System.out.println("어떤 수를 0으로 나눌수는 없어요.");
 		}
 		System.out.println("main 메소드가 종료 됩니다.");

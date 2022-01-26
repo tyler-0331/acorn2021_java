@@ -21,6 +21,7 @@ public class MainClass03 {
 			System.out.println(num2+" 를 "+num1+" 으로 나눈 몫은 "+result);
 			System.out.println(num2+" 를 "+num1+" 으로 나눈 나머지는 "+result2);
 		}catch(Exception e) {
+			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
 		System.out.println("main 메소드가 종료 됩니다.");

@@ -31,19 +31,20 @@ public class MemberFrame extends JFrame
 	
 	//생성자
 	public MemberFrame(String title) {
+		// 부모 객체에서 전달
 		super(title);
 		//프레임의 레이아웃 법칙 지정하기
 		setLayout(new BorderLayout());
 		//상단 페널
 		JPanel topPanel=new JPanel();
-		topPanel.setBackground(Color.YELLOW);
+		topPanel.setBackground(Color.PINK);
 		//페널을 상단에 배치하기 
 		add(topPanel, BorderLayout.NORTH);
 		//페널에 추가할 UI 객체를 생성해서 
 		JLabel label_name=new JLabel("이름");
 		JLabel label_addr=new JLabel("주소");
 		//아래 메소드에서 필요한값을 필드에 저장하기 
-		text_name=new JTextField(10);
+		text_name=new JTextField(5);
 		text_addr=new JTextField(10);
 		JButton btn_add=new JButton("추가");
 		//페널에 순서대로 추가하기
@@ -91,7 +92,7 @@ public class MemberFrame extends JFrame
 		//삭제 버튼을 상단 페널에 추가
 		topPanel.add(btn_delete);
 		//회원목록을 주기적으로 업데이트 해주는 스레드 시작 시키기 
-		//new UpdateThread().start();
+		new UpdateThread().start();
 		
 		//테이블의 값이 바뀌는지 감시할 리스너 등록하기 
 		table.addPropertyChangeListener(this);
@@ -109,11 +110,13 @@ public class MemberFrame extends JFrame
 		for(MemberDto tmp:list) {
 			// {1, "김구라", "노량진" }
 			//Object[] row= {tmp.getNum(), tmp.getName(), tmp.getAddr()};
+			
+			//JTable 에 출력할 row 하나의 정보를 Vector 객체에 담아서
 			Vector<Object> row=new Vector<>();
 			row.add(tmp.getNum());
 			row.add(tmp.getName());
 			row.add(tmp.getAddr());
-	
+			// 모델에 추가하면 JTable 에 출력된다.
 			model.addRow(row);
 		}
 	}
@@ -193,7 +196,9 @@ public class MemberFrame extends JFrame
 					e.printStackTrace();
 				}
 				//화면 업데이트
-				printMember();
+				if(!isEditing) {
+					printMember();
+				}	
 			}
 		}
 	}
